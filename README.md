@@ -15,3 +15,8 @@ default password is "postgres"
 run the application
 
 python app/main.py
+
+Youtube Video
+
+https://youtu.be/jEjjfNTRIyE
+
