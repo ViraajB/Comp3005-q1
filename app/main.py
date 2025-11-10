@@ -8,7 +8,9 @@ def connect():
         user="postgres",
         password="postgres"   
     )
+#connect code to database
 
+#function to print all student data
 def getAllStudents():
     conn = connect()
     cur = conn.cursor()
@@ -17,6 +19,8 @@ def getAllStudents():
     for r in rows:
         print(r)
     conn.close()
+
+#function to and and print student data
 
 def addStudent(first, last, email, date):
     conn = connect()
@@ -29,6 +33,7 @@ def addStudent(first, last, email, date):
     print("Student added.")
     conn.close()
 
+#function to update student email with id
 def updateStudentEmail(student_id, new_email):
     conn = connect()
     cur = conn.cursor()
@@ -40,6 +45,7 @@ def updateStudentEmail(student_id, new_email):
     print("Email updated.")
     conn.close()
 
+#function to delete student using id
 def deleteStudent(student_id):
     conn = connect()
     cur = conn.cursor()
@@ -51,7 +57,7 @@ def deleteStudent(student_id):
     print("Student deleted.")
     conn.close()
 
-
+#main program loop
 if __name__ == "__main__":
     while True:
         print("\n1. List students")
@@ -59,7 +65,7 @@ if __name__ == "__main__":
         print("3. Update student email")
         print("4. Delete student")
         print("5. Quit")
-
+        #call function based on choice
         choice = input("Enter choice: ")
 
         if choice == "1":
@@ -82,6 +88,7 @@ if __name__ == "__main__":
             deleteStudent(sid)
 
         elif choice == "5":
+            #exit program
             print("Goodbye!")
             break
 
